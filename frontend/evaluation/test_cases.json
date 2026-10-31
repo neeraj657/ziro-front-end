@@ -1,0 +1,218 @@
+[
+  {
+    "id": "TC-01",
+    "name": "Valid Python Repository",
+    "category": "Repository Analysis",
+    "candidate_id": "CAND-PY-01",
+    "repo_url": "https://github.com/synthetic-lab/fastapi-async-worker",
+    "claimed_skills": ["Python", "FastAPI"],
+    "expected_outcome": {
+      "status": "verified",
+      "recommendation": "approve",
+      "evidence_score": 88,
+      "test_pass_rate": 1.0,
+      "failure_handled": true,
+      "signature_valid": true,
+      "ground_truth": 1
+    },
+    "description": "Clean modular Python codebase with dependency injection, async endpoints, and 14 passing pytest cases."
+  },
+  {
+    "id": "TC-02",
+    "name": "Valid React Repository",
+    "category": "Repository Analysis",
+    "candidate_id": "CAND-REACT-02",
+    "repo_url": "https://github.com/synthetic-lab/realtime-kanban-board",
+    "claimed_skills": ["React", "JavaScript"],
+    "expected_outcome": {
+      "status": "verified",
+      "recommendation": "approve",
+      "evidence_score": 92,
+      "test_pass_rate": 1.0,
+      "failure_handled": true,
+      "signature_valid": true,
+      "ground_truth": 1
+    },
+    "description": "Modern React 18 frontend with custom hooks, TanStack Query, accessible components, and Vitest suite."
+  },
+  {
+    "id": "TC-03",
+    "name": "Valid ML Repository",
+    "category": "Repository Analysis",
+    "candidate_id": "CAND-001",
+    "repo_url": "https://github.com/synthetic-lab/fraud-detection-ml",
+    "claimed_skills": ["Python", "Machine Learning"],
+    "expected_outcome": {
+      "status": "verified",
+      "recommendation": "approve",
+      "evidence_score": 94,
+      "test_pass_rate": 1.0,
+      "failure_handled": true,
+      "signature_valid": true,
+      "ground_truth": 1
+    },
+    "description": "Comprehensive Scikit-Learn / PyTorch pipeline with data cleaning, feature engineering, cross-validation, and ROC-AUC test."
+  },
+  {
+    "id": "TC-04",
+    "name": "Repository with Passing Tests",
+    "category": "Test Verification",
+    "candidate_id": "CAND-TST-04",
+    "repo_url": "https://github.com/synthetic-lab/algo-trading-engine",
+    "claimed_skills": ["Python"],
+    "expected_outcome": {
+      "status": "verified",
+      "recommendation": "approve",
+      "evidence_score": 89,
+      "test_pass_rate": 1.0,
+      "failure_handled": true,
+      "signature_valid": true,
+      "ground_truth": 1
+    },
+    "description": "Full test coverage including unit tests, boundary tests, and mock exchange fixtures with 100% pass rate."
+  },
+  {
+    "id": "TC-05",
+    "name": "Repository with Failing Tests",
+    "category": "Test Verification",
+    "candidate_id": "CAND-TST-05",
+    "repo_url": "https://github.com/synthetic-lab/broken-order-service",
+    "claimed_skills": ["Python", "FastAPI"],
+    "expected_outcome": {
+      "status": "rejected",
+      "recommendation": "reject",
+      "evidence_score": 42,
+      "test_pass_rate": 0.28,
+      "failure_handled": true,
+      "signature_valid": true,
+      "ground_truth": 0
+    },
+    "description": "Repository contains broken core logic: 5 of 7 pytest test cases fail due to unhandled NullPointer and schema mismatch."
+  },
+  {
+    "id": "TC-06",
+    "name": "Empty Repository",
+    "category": "Edge Case & Ingestion",
+    "candidate_id": "CAND-EMP-06",
+    "repo_url": "https://github.com/synthetic-lab/blank-workspace",
+    "claimed_skills": ["Python", "JavaScript"],
+    "expected_outcome": {
+      "status": "insufficient_evidence",
+      "recommendation": "reject",
+      "evidence_score": 0,
+      "test_pass_rate": 0.0,
+      "failure_handled": true,
+      "signature_valid": false,
+      "ground_truth": 0
+    },
+    "description": "Repository contains only an empty README.md with 0 code files and 0 test cases."
+  },
+  {
+    "id": "TC-07",
+    "name": "Invalid GitHub URL",
+    "category": "Edge Case & Ingestion",
+    "candidate_id": "CAND-INV-07",
+    "repo_url": "https://notgithub.com/invalid/nonexistent-target-999",
+    "claimed_skills": ["Python"],
+    "expected_outcome": {
+      "status": "error_handled",
+      "recommendation": "reject",
+      "evidence_score": 0,
+      "test_pass_rate": 0.0,
+      "failure_handled": true,
+      "signature_valid": false,
+      "ground_truth": 0
+    },
+    "description": "Non-existent URL or 404 repository; agent must handle error gracefully without crashing."
+  },
+  {
+    "id": "TC-08",
+    "name": "Repository with Insufficient Evidence",
+    "category": "Evidence Coverage",
+    "candidate_id": "CAND-002",
+    "repo_url": "https://github.com/synthetic-lab/empty-stub-repo",
+    "claimed_skills": ["Python", "FastAPI", "SQL"],
+    "expected_outcome": {
+      "status": "insufficient_evidence",
+      "recommendation": "reject",
+      "evidence_score": 24,
+      "test_pass_rate": 0.0,
+      "failure_handled": true,
+      "signature_valid": false,
+      "ground_truth": 0
+    },
+    "description": "Candidate claimed advanced SQL and FastAPI, but codebase contains only a 'hello world' FastAPI route without SQL or tests."
+  },
+  {
+    "id": "TC-09",
+    "name": "Repository with Suspicious Single-Commit Patterns",
+    "category": "Git Anomaly Detection",
+    "candidate_id": "CAND-GIT-09",
+    "repo_url": "https://github.com/synthetic-lab/dumped-monorepo",
+    "claimed_skills": ["React", "JavaScript"],
+    "expected_outcome": {
+      "status": "flagged",
+      "recommendation": "flag_for_review",
+      "evidence_score": 58,
+      "test_pass_rate": 0.85,
+      "failure_handled": true,
+      "signature_valid": false,
+      "ground_truth": 0
+    },
+    "description": "Entire 40,000-line repository committed in a single commit 'initial commit' 2 hours before submission. Flagged for reviewer inspection."
+  },
+  {
+    "id": "TC-10",
+    "name": "Repository with Duplicate Code Indicators",
+    "category": "Originality Inspection",
+    "candidate_id": "CAND-DUP-10",
+    "repo_url": "https://github.com/synthetic-lab/cloned-tutorial-project",
+    "claimed_skills": ["Python", "Machine Learning"],
+    "expected_outcome": {
+      "status": "flagged",
+      "recommendation": "flag_for_review",
+      "evidence_score": 52,
+      "test_pass_rate": 0.9,
+      "failure_handled": true,
+      "signature_valid": false,
+      "ground_truth": 0
+    },
+    "description": "Ast-fingerprint matches verbatim public tutorial boilerplate with unchanged author header and comments. Flagged for reviewer review."
+  },
+  {
+    "id": "TC-11",
+    "name": "Candidate Unable to Explain Implementation in Viva",
+    "category": "Viva Interview Verification",
+    "candidate_id": "CAND-VIVA-11",
+    "repo_url": "https://github.com/synthetic-lab/complex-distributed-kv",
+    "claimed_skills": ["Python"],
+    "expected_outcome": {
+      "status": "rejected",
+      "recommendation": "reject",
+      "evidence_score": 45,
+      "test_pass_rate": 1.0,
+      "failure_handled": true,
+      "signature_valid": false,
+      "ground_truth": 0
+    },
+    "description": "Codebase shows sophisticated Raft consensus implementation, but candidate viva answers gave generic non-answers and contradicted code architecture."
+  },
+  {
+    "id": "TC-12",
+    "name": "Credential with Modified Signature (Tampered)",
+    "category": "Cryptographic Integrity",
+    "candidate_id": "CAND-CRED-12",
+    "repo_url": "https://github.com/synthetic-lab/fraud-detection-ml",
+    "claimed_skills": ["Machine Learning"],
+    "expected_outcome": {
+      "status": "invalid_signature",
+      "recommendation": "reject",
+      "evidence_score": 0,
+      "test_pass_rate": 0.0,
+      "failure_handled": true,
+      "signature_valid": false,
+      "ground_truth": 0
+    },
+    "description": "Credential payload was modified post-issuance (claimed skill altered from Junior to Senior), invalidating cryptographic HMAC-SHA256 signature."
+  }
+]
