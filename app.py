@@ -11,7 +11,8 @@ if frontend_dir not in sys.path:
     sys.path.insert(0, frontend_dir)
 
 # Execute the master frontend app script
+import runpy
+
 app_path = os.path.join(frontend_dir, "app.py")
-with open(app_path, "r", encoding="utf-8") as f:
-    code = f.read()
-    exec(code)
+runpy.run_path(app_path, run_name="__main__")
+
